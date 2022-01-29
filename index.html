@@ -6,15 +6,15 @@
   <table>
   <tr>
   <td> first name</td>
-  <td><input type="textbox"></input></td>
+  <td><input type="textbox" id="firstname"></input></td>
   </tr>
   <tr>
   <td> last name</td>
-  <td><input type="textbox"></input></td>
+  <td><input type="textbox" id="lastname"></input></td>
   </tr>
   <tr>
   <td> email</td>
-  <td><input type="textbox"></input></td>
+  <td><input type="textbox" id="email"></input></td>
   </tr>
   <tr>
   <td> password</td>
@@ -31,6 +31,14 @@
 <script language = "javascript">
  function redirecttoindex ()
   {
+    if( document.getElementById("firstname").value == ""
+      || document.getElementById("lastname").value == ""
+      || document.getElementById("email").value == ""
+      || document.getElementById("pwd").value == "")
+    {
+      alert ("Please enter all details...");
+      return false;
+    }
     alert("Congratulations! you are successfully sign up!"); 
     location.href = "index2.html"; 
     return false;
