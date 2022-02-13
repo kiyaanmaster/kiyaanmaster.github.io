@@ -6,32 +6,46 @@
     <div id="loader">
       <img src="https://icons8.com/preloaders/preloaders/1480/Fidget-spinner.gif" width="250px" height="250px"></img>
     </div>
-  <table>
-  <tr>
-  <td> first name</td>
-  <td><input type="textbox" id="firstname"></input></td>
-  </tr>
-  <tr>
-  <td> last name</td>
-  <td><input type="textbox" id="lastname"></input></td>
-  </tr>
-  <tr>
-  <td> email</td>
-  <td><input type="textbox" id="email"></input></td>
-  </tr>
-  <tr>
-  <td> password</td>
-    <td><input type="password" id="pwd" name="pwd" minlength="8"></input></td>
-  </tr>
-   <tr>
-  <td colspan=2 align="center">
-      <input type="button" onclick = "redirecttoindex();" value = "Sign Up" width="100px">
-      </input>
-  </td>
-   </tr>
-  </table>
+    <div id="signupform">
+      <table>
+      <tr>
+      <td> first name</td>
+      <td><input type="textbox" id="firstname"></input></td>
+      </tr>
+      <tr>
+      <td> last name</td>
+      <td><input type="textbox" id="lastname"></input></td>
+      </tr>
+      <tr>
+      <td> email</td>
+      <td><input type="textbox" id="email"></input></td>
+      </tr>
+      <tr>
+      <td> password</td>
+        <td><input type="password" id="pwd" name="pwd" minlength="8"></input></td>
+      </tr>
+       <tr>
+      <td colspan=2 align="center">
+          <input type="button" onclick = "redirecttoindex();" value = "Sign Up" width="100px">
+          </input>
+      </td>
+       </tr>
+       </table>
+    </div>
 </body>
 <script language = "javascript">
+  document.getElementById ("loader").style.display="block";
+  document.getElementById ("signupform").style.display="none";
+  
+  const myTimeout= setTimeout(showsignupform, 10000); 
+  
+  function showsignupform()
+  {
+    document.getElementById ("loader").style.display="none";
+    document.getElementById ("signupform").style.display="block";
+  }
+  
+  
  function redirecttoindex ()
   {
     if( document.getElementById("firstname").value == ""
